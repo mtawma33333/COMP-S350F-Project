@@ -1,0 +1,29 @@
+[
+  {
+    "role": "admin",
+    "id": "30001",
+    "password": "password1",
+    "email": "admin1@example.com",
+    "name": "John Smith",
+    "passwordConfirm": "password1",
+    "active": true
+  },
+  {
+    "role": "admin",
+    "id": "30002",
+    "password": "password2",
+    "email": "admin2@example.com",
+    "name": "Jane Doe",
+    "passwordConfirm": "password2",
+    "active": true
+  },
+  {
+    "role": "admin",
+    "id": "30003",
+    "password": "password3",
+    "email": "admin3@example.com",
+    "name": "Bob Lee",
+    "passwordConfirm": "password3",
+    "active": true
+  }
+]

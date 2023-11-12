@@ -1,0 +1,67 @@
+[
+  {
+    "role": "student",
+    "id": "10001",
+    "password": "password1",
+    "email": "student1@example.com",
+    "name": "John Doe",
+    "sex": "male",
+    "birth": "1999-01-01",
+    "phone": "1234567890",
+    "address": "123 Main St, Anytown, USA",
+    "passwordConfirm": "password1",
+    "active": true
+  },
+  {
+    "role": "student",
+    "id": "10002",
+    "password": "password2",
+    "email": "student2@example.com",
+    "name": "Jane Smith",
+    "sex": "female",
+    "birth": "2000-02-02",
+    "phone": "2345678901",
+    "address": "456 Oak St, Anytown, USA",
+    "passwordConfirm": "password2",
+    "active": true
+  },
+  {
+    "role": "student",
+    "id": "10003",
+    "password": "password3",
+    "email": "student3@example.com",
+    "name": "Bob Johnson",
+    "sex": "male",
+    "birth": "2001-03-03",
+    "phone": "3456789012",
+    "address": "789 Elm St, Anytown, USA",
+    "passwordConfirm": "password3",
+    "active": true
+  },
+  {
+    "role": "student",
+    "id": "10004",
+    "password": "password4",
+    "email": "student4@example.com",
+    "name": "Alice Lee",
+    "sex": "female",
+    "birth": "2002-04-04",
+    "phone": "4567890123",
+    "address": "321 Pine St, Anytown, USA",
+    "passwordConfirm": "password4",
+    "active": true
+  },
+  {
+    "role": "student",
+    "id": "10005",
+    "password": "password5",
+    "email": "student5@example.com",
+    "name": "Tom Smith",
+    "sex": "male",
+    "birth": "2003-05-05",
+    "phone": "5678901234",
+    "address": "654 Cedar St, Anytown, USA",
+    "passwordConfirm": "password5",
+    "active": true
+  }
+]

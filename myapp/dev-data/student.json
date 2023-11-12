@@ -1,0 +1,372 @@
+[
+  {
+    "sid": "s001",
+    "password": "password1",
+    "name": "Alice Smith",
+    "grade": 10,
+    "email": "alice.smith@example.com",
+    "phone": "12345678",
+    "address": "123 Main St",
+    "birth": "2006-01-01",
+    "gender": "Female",
+    "academic_records": [
+      {
+        "course_id": "6.0001",
+        "grade": "A",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.042J",
+        "grade": "B+",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.006",
+        "grade": "A-",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.01",
+        "grade": "B",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "sid": "s002",
+    "password": "password2",
+    "name": "Bob Johnson",
+    "grade": 11,
+    "email": "bob.johnson@example.com",
+    "phone": "23456789",
+    "address": "456 Oak St",
+    "birth": "2005-01-01",
+    "gender": "Male",
+    "academic_records": [
+      {
+        "course_id": "6.006",
+        "grade": "B",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.033",
+        "grade": "A-",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.034",
+        "grade": "B+",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.0001",
+        "grade": "A",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "sid": "s003",
+    "password": "password3",
+    "name": "Charlie Lee",
+    "grade": 12,
+    "email": "charlie.lee@example.com",
+    "phone": "34567890",
+    "address": "789 Elm St",
+    "birth": "2004-01-01",
+    "gender": "Male",
+    "academic_records": [
+      {
+        "course_id": "6.042J",
+        "grade": "A-",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.01",
+        "grade": "B+",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.02",
+        "grade": "B",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.033",
+        "grade": "A",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "sid": "s004",
+    "password": "password4",
+    "name": "David Kim",
+    "grade": 9,
+    "email": "david.kim@example.com",
+    "phone": "45678901",
+    "address": "234 Maple St",
+    "birth": "2007-01-01",
+    "gender": "Male",
+    "academic_records": [
+      {
+        "course_id": "6.004",
+        "grade": "B+",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.005",
+        "grade": "A-",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.033",
+        "grade": "B",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.034",
+        "grade": "A",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "sid": "s005",
+    "password": "password5",
+    "name": "Emily Chen",
+    "grade": 11,
+    "email": "emily.chen@example.com",
+    "phone": "56789012",
+    "address": "567 Pine St",
+    "birth": "2005-01-01",
+    "gender": "Female",
+    "academic_records": [
+      {
+        "course_id": "6.02",
+        "grade": "A-",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.003",
+        "grade": "B+",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.004",
+        "grade": "A",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.005",
+        "grade": "B",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "sid": "s006",
+    "password": "password6",
+    "name": "Frank Wang",
+    "grade": 10,
+    "email": "frank.wang@example.com",
+    "phone": "67890123",
+    "address": "890 Cedar St",
+    "birth": "2006-01-01",
+    "gender": "Male",
+    "academic_records": [
+      {
+        "course_id": "6.033",
+        "grade": "A-",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.034",
+        "grade": "B+",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.0001",
+        "grade": "A",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.042J",
+        "grade": "B",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "sid": "s007",
+    "password": "password7",
+    "name": "Grace Liu",
+    "grade": 12,
+    "email": "grace.liu@example.com",
+    "phone": "78901234",
+    "address": "123 Oak St",
+    "birth": "2004-01-01",
+    "gender": "Female",
+    "academic_records": [
+      {
+        "course_id": "6.01",
+        "grade": "A-",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.02",
+        "grade": "B+",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.003",
+        "grade": "A",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.004",
+        "grade": "B",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "sid": "s008",
+    "password": "password8",
+    "name": "Henry Zhang",
+    "grade": 9,
+    "email": "henry.zhang@example.com",
+    "phone": "89012345",
+    "address": "456 Maple St",
+    "birth": "2007-01-01",
+    "gender": "Male",
+    "academic_records": [
+      {
+        "course_id": "6.005",
+        "grade": "B+",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.033",
+        "grade": "A-",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.034",
+        "grade": "B",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.0001",
+        "grade": "A",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "sid": "s009",
+    "password": "password9",
+    "name": "Isabella Chen",
+    "grade": 11,
+    "email": "isabella.chen@example.com",
+    "phone": "90123456",
+    "address": "789 Pine St",
+    "birth": "2005-01-01",
+    "gender": "Female",
+    "academic_records": [
+      {
+        "course_id": "6.02",
+        "grade": "A",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.003",
+        "grade": "B+",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.004",
+        "grade": "A-",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.005",
+        "grade": "B",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "sid": "s010",
+    "password": "password10",
+    "name": "Jack Wang",
+    "grade": 10,
+    "email": "jack.wang@example.com",
+    "phone": "01234567",
+    "address": "234 Cedar St",
+    "birth": "2006-01-01",
+    "gender": "Male",
+    "academic_records": [
+      {
+        "course_id": "6.033",
+        "grade": "B+",
+        "semester": "Fall",
+        "year": 2020
+      },
+      {
+        "course_id": "6.034",
+        "grade": "A-",
+        "semester": "Spring",
+        "year": 2021
+      },
+      {
+        "course_id": "6.0001",
+        "grade": "B",
+        "semester": "Fall",
+        "year": 2021
+      },
+      {
+        "course_id": "6.042J",
+        "grade": "A",
+        "semester": "Spring",
+        "year": 2022
+      }
+    ]
+  }
+]

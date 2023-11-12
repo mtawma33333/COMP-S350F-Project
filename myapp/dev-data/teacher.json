@@ -1,0 +1,32 @@
+[
+  {
+    "tid": "t001",
+    "password": "password1",
+    "name": "John Smith",
+    "course": ["6.0001", "6.042J", "6.006", "6.01"]
+  },
+  {
+    "tid": "t002",
+    "password": "password2",
+    "name": "Jane Doe",
+    "course": ["6.02", "6.003", "6.004", "6.005"]
+  },
+  {
+    "tid": "t003",
+    "password": "password3",
+    "name": "Bob Johnson",
+    "course": ["6.006", "6.033", "6.034", "6.0001"]
+  },
+  {
+    "tid": "t004",
+    "password": "password4",
+    "name": "Alice Lee",
+    "course": ["6.042J", "6.01", "6.02", "6.033"]
+  },
+  {
+    "tid": "t005",
+    "password": "password5",
+    "name": "Tom Wilson",
+    "course": ["6.004", "6.005", "6.033", "6.034"]
+  }
+]
