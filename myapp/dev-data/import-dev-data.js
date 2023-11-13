@@ -10,6 +10,7 @@ const course = JSON.parse(fs.readFileSync(`${__dirname}/course.json`, 'utf-8'))
 const teacher = JSON.parse(fs.readFileSync(`${__dirname}/teacher-v2.json`, 'utf-8'))
 const student = JSON.parse(fs.readFileSync(`${__dirname}/student-v3.json`, 'utf-8'))
 const admin = JSON.parse(fs.readFileSync(`${__dirname}/admin.json`, 'utf-8'))
+const record = JSON.parse(fs.readFileSync(`${__dirname}/record.json`, 'utf-8'))
 // const record = JSON.parse(fs.readFileSync(`${__dirname}/record.json`, 'utf-8'))
 
 // IMPORT DATA INTO DB
@@ -19,6 +20,7 @@ const importData = async () => {
         await User.create(student)
         await User.create(teacher)
         await User.create(admin)
+        await Record.create(record)
         console.log('Data successfully loaded!')
     } catch (err) {
         console.log(err)

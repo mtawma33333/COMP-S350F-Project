@@ -1,7 +1,7 @@
 [
   {
     "role": "student",
-    "id": "10001",
+    "uid": "10001",
     "password": "password1",
     "email": "student1@example.com",
     "name": "John Doe",
@@ -14,7 +14,7 @@
   },
   {
     "role": "student",
-    "id": "10002",
+    "uid": "10002",
     "password": "password2",
     "email": "student2@example.com",
     "name": "Jane Smith",
@@ -27,7 +27,7 @@
   },
   {
     "role": "student",
-    "id": "10003",
+    "uid": "10003",
     "password": "password3",
     "email": "student3@example.com",
     "name": "Bob Johnson",
@@ -40,7 +40,7 @@
   },
   {
     "role": "student",
-    "id": "10004",
+    "uid": "10004",
     "password": "password4",
     "email": "student4@example.com",
     "name": "Alice Lee",
@@ -53,7 +53,7 @@
   },
   {
     "role": "student",
-    "id": "10005",
+    "uid": "10005",
     "password": "password5",
     "email": "student5@example.com",
     "name": "Tom Smith",

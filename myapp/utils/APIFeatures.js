@@ -1,3 +1,4 @@
+// A class for the conditional find operation
 class APIFeatures {
     constructor(query, queryString) {
         this.query = query

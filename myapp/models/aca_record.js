@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Course = require('./course')
 const academicRecordSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.ObjectId,

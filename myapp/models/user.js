@@ -1,5 +1,9 @@
+//"Keep the fat models, thin controllers"
+//"philosophyy in mind there"
+
 const mongoose = require('mongoose');
 const moment = require("moment");
+const bcrypt = require('bcryptjs')
 
 const userSchema = new mongoose.Schema({
   role: {
@@ -7,7 +11,7 @@ const userSchema = new mongoose.Schema({
     enum: ['student', 'teacher', 'admin'],
     default: 'student'
   },
-  id: {
+  uid: {
     type: String,
     required: [true, 'Please provide your ID'],
     unique: true
@@ -60,13 +64,22 @@ const userSchema = new mongoose.Schema({
     select: false
   }
 },{
-    toJSON: { virtuals: true },
-    toObject: { virtuals: true }
+    toJSON: { virtuals: false },
+    toObject: { virtuals: false }
 });
 
 userSchema.virtual("birth_formatted").get(function () {
   return moment(this.birth).format("MMMM Do, YYYY");
 });
+// Middleware
+userSchema.pre('save', async function(next) {
+  if(this.isModified('password')) return next();
+// encrypt the password when we receive the data and the moment of save
+  this.password = await bcrypt.hash(this.password, 12)
+
+  this.passwordConfirm = undefined;
+  next()
+})
 
 const UserModel =  mongoose.model('user', userSchema, 'user');
 
