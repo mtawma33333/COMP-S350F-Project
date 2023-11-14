@@ -1,6 +1,12 @@
 const fs = require('fs')
+const mongoose = require('mongoose')
 
-const db = require('./../db/db')
+const mongoDB = "mongodb+srv://ylliustudy:ylliustudy@cluster0.tp9t6ke.mongodb.net/ACA_Record?retryWrites=true&w=majority";
+
+mongoose
+    .connect(mongoDB)
+    .then(() => console.log('DB connection successful'))
+
 const Course = require('./../models/course')
 const User = require('./../models/user')
 const Record = require('./../models/aca_record') 

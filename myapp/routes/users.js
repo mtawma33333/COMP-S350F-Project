@@ -6,13 +6,29 @@ const router = express.Router();
 router.post('/signup', authController.signup)
 router.post('/login', authController.login)
 
+router.post('/forgotPassword', authController.forgotPassword)
+router.patch('/resetPassword/:token', authController.resetPassword)
+
+router.patch('/updateMyPassword', authController.protect, authController.updatePassword)
+
 router.route('/')
-  .get(userController.getAllUsers)
-  .post(userController.createUser);
+  .get(
+    authController.protect, 
+    userController.getAllUsers)
+  .post(
+    authController.protect, 
+    userController.createUser);
 
 router.route('/:id')
-  .get(userController.getUser)
-  .patch(userController.updateUser)
-  .delete(userController.deleteUser);
+  .get(
+    authController.protect, 
+    userController.getUser)
+  .patch(
+    authController.protect, 
+    userController.updateUser)
+  .delete(
+    authController.protect, 
+    authController.restricTo('admin'),
+    userController.deleteUser);
 
 module.exports = router;

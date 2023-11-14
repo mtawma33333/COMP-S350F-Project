@@ -1,3 +1,5 @@
+// handle the operational error
+// mongoose error CastError, DuplicateFields, ValidationError
 class AppError extends Error {
     constructor(message, statusCode) {
         super(message)

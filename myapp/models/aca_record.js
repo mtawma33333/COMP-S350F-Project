@@ -35,6 +35,12 @@ const academicRecordSchema = new mongoose.Schema({
     default: Date.now()
   }
 });
+academicRecordSchema.pre('save', function(next) {
+  // Only run if really modified
+  if(!this.isModified()) return next();
+  this.modifiedAt = Date.now() - 1000
+  next()
+})
 
 const RecordModel = mongoose.model('record', academicRecordSchema, 'record');
 

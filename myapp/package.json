@@ -17,6 +17,7 @@
     "moment": "^2.29.4",
     "mongoose": "^8.0.0",
     "morgan": "~1.9.1",
+    "nodemailer": "^6.9.7",
     "nodemon": "^3.0.1"
   },
   "engine": {

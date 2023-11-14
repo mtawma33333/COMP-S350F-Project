@@ -14,7 +14,7 @@ const handleDuplicateFieldsDB = err => {
   return new AppError(message, 400);
 };
 
-// handle the invalid input due to the validation error
+// handle the validation error due to invalid input
 const handleValidationErrorDB = err => {
   const errors = Object.values(err.errors).map(el => el.message);
 
