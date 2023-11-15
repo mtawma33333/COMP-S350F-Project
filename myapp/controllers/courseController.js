@@ -2,6 +2,8 @@ const Course = require('./../models/course');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const factory = require('./handlerFactory');
+
+
 // Baseic CRUD
 exports.createCourse = factory.createOne(Course);
   

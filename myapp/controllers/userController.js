@@ -4,6 +4,14 @@ const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const factory = require('./handlerFactory');
 
+const filterObj = (obj, ...allowedFields) => {
+  const newObj = {}
+  Object.keys(obj).forEach(el => {
+    if(allowedFields.includes(el)) newObj[el] = obj[el]
+  });
+return newObj
+}
+
 // CRUD Opperation
 exports.getMe = (req, res, next) => {
   req.params.id = req.user.id;
@@ -19,8 +27,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   }
 
   // 2) Filtered out unwanted fields names that are not allowed to be updated
-  const filteredBody = filterObj(req.body, 'name', 'email');
-  if (req.file) filteredBody.photo = req.file.filename;
+  const filteredBody = filterObj(req.body, 'email', 'sex', 'birth', 'phone', 'address');
 
   // 3) Update user document
   const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
@@ -36,8 +43,8 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.deleteMe = catchAsync(async (req, res, next) => {
-  await User.findByIdAndUpdate(req.user.id, { active: false });
+exports.inactiveUser = catchAsync(async (req, res, next) => {
+  await User.findByIdAndUpdate(req.params.id, { active: false });
 
   res.status(204).json({
     status: 'success',
@@ -47,12 +54,7 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
 
 // Baseic CRUD
 
-exports.createUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not defined! ##TODO Please use /signup instead'
-  });
-};
+exports.createUser = factory.createOne(User);
 
 exports.getUser = factory.getOne(User);
 exports.getAllUsers = factory.getAll(User);

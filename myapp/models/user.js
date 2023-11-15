@@ -70,8 +70,8 @@ const userSchema = new mongoose.Schema({
     select: false
   }
 },{
-    toJSON: { virtuals: false },
-    toObject: { virtuals: false }
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
 });
 
 userSchema.virtual("birth_formatted").get(function () {
@@ -87,6 +87,11 @@ userSchema.pre('save', async function(next) {
   this.password = await bcrypt.hash(this.password, 12)
 // delete the passwordConfirm field
   this.passwordConfirm = undefined;
+  next()
+})
+
+userSchema.pre(/^find/, function(next) {
+  this.find({ active: true })
   next()
 })
 
@@ -113,19 +118,7 @@ userSchema.methods.changedPasswordAfter = function(JWTTimestamp) {
   return false;
 };
 
-userSchema.methods.createPasswordResetToken = function() {
-  // should not save a plain reset token in database
-  const resetToken = crypto.randomBytes(32).toString('hex')
 
-  this.passwordResetToken = crypto
-    .createHash('sha256')
-    .update(resetToken)
-    .digest('hex')
-
-    console.log({ resetToken }, this.passwordResetToken)
-  this.passwordResetExpires = Date.now() + 10 * 60 * 1000
-  return resetToken
-}
 userSchema.pre('save', function(next) {
   // Only run if really modified
   if(!this.isModified('password') || this.isNew) return next();
