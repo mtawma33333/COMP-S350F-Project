@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <%- include('_head') %>
+  <body>
+    <!-- HEADER -->
+    <%- include('_header') %>
+    <!-- CONTENT -->
+    <main class="main">
+      <div class="user-view">
+        <%- include('_side__menu') %>
+        
+        <div class="user-view__content">
+        <div class="user-view__form-container">
+          <h2 class="heading-secondary">Edit <%= user.role %> <%= user.uid %></h2>
+          <form class="form form-update-user">
+            <div class="form__group">
+              <label class="form__label" for="role">Role:</label>
+              <select id="role" class="form__input" name="role">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="student">student</option>
+                <option value="teacher">teacher</option>
+                <option value="admin">admin</option>
+              </select><br>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="uid">uid</label>
+              <input class="form__input" type="text" id="uid" name="uid" value="<%= user.uid %>" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="name">Name</label>
+              <input class="form__input" type="text" id="name" name="name" value="<%= user.name %>" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Email address</label>
+              <input class="form__input" type="email" id="email" name="email" value="<%= user.email %>" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="sex">Sex:</label>
+              <select id="sex" class="form__input" name="sex">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select><br>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="brith">Brith</label>
+              <input class="form__input" type="date" id="brith" name="brith" value="<%= user.birth_formatted %>">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="phone">Phone</label>
+              <input class="form__input" type="text" id="phone" name="phone" value="<%= user.phone %>">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="address">Address</label>
+              <input class="form__input" type="text" id="address" name="address" value="<%= user.address %>">
+            </div>
+            <div class="form__group right">
+              <button class="btn btn--small btn--green" type="submit">Save settings</button>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </main>
+    <!-- FOOTER -->
+    <%- include('_footer') %>
+  </body>
+</html> 

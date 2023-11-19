@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <%- include('_head') %>
+
+  <body>
+    <!-- HEADER -->
+    <%- include('_header') %>
+    <!-- CONTENT -->
+    <div id="right_panel">
+      <div class="wrap-table">
+          <table>
+          <thead>
+              <tr>
+              <th scope="col" class="sticky-col">Course ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Credits</th>
+              <th scope="col" class="sticky-col sticky-col-right">Actions</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <% course.forEach(course => { %>
+              <tr>
+              <td class="sticky-col" scope="row" data-label="Customer">
+                  <div class="user__info">
+                  <label>
+                      <input type="checkbox" class="checkbox">
+                      <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                      </span>
+                  </label>
+                  <div>
+                      <div class="user__id"><%= course.course_id %></div>
+                  </div>
+                  </div>
+              </td>
+              <td data-label="Name"><%= course.name %></td>
+              <td data-label="Description"><%= course.description %></td>
+              <td data-label="Credits"><%= course.credits %></td>
+              <td data-label="Actions" class="sticky-col sticky-col-right">
+                  <a href="course/<%= course.id %>/update" class="user__edit">Edit</a>
+                  <button class="btn btn--small btn--red delete-course-btn" id="<%= course.id %>" type="button">Delete</button>
+              </td>
+              </tr>
+              <% }); %>
+          </tbody>
+          </table>
+      </div>
+      </div>
+    <!-- FOOTER -->
+    <%- include('_footer') %>
+  </body>
+</html> 

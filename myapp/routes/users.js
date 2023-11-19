@@ -13,18 +13,19 @@ router.get('/logout', authController.logout);
 
 router.use(authController.protect);
 
-router.patch('/updateMyPassword', authController.updatePassword)
 
 router.get('/me', userController.getMe, userController.getUser)
 router.patch('/updateMe', userController.updateMe)
-  // Protect all routes after this middleware
+router.patch('/updateMyPassword', authController.updatePassword)
+
+// Protect all routes after this middleware
 router.use(authController.restrictTo('admin'));
 
 router.route('/')
   .get(
     userController.getAllUsers)
   .post(
-    userController.createUser);
+    userController.createUser)
 
 router.route('/:id')
   .get(
@@ -32,6 +33,6 @@ router.route('/:id')
   .patch(
     userController.updateUser)
   .delete(
-    userController.deleteUser);
+    userController.deleteUser)
 
 module.exports = router;

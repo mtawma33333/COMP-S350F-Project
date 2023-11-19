@@ -8,12 +8,11 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const compression = require('compression');
 const cors = require('cors');
 
 const AppError = require('./utils/appError')
 const globalErrorHandler = require('./controllers/errorController')
-const indexRouter = require('./routes/index');
+const viewsRouter = require('./routes/views');
 const usersRouter = require('./routes/users');
 const courseRouter = require('./routes/course');
 const recordRouter = require('./routes/record');
@@ -68,7 +67,7 @@ app.use((req, res, next) => {
   next()
 })
 // router
-app.use('/', indexRouter);
+app.use('/', viewsRouter);
 app.use('/api/user', usersRouter);
 app.use('/api/course', courseRouter);
 app.use('/api/record', recordRouter);

@@ -5,7 +5,6 @@
 const mongoose = require('mongoose');
 const moment = require("moment");
 const bcrypt = require('bcryptjs')
-const crypto = require('crypto')
 
 const userSchema = new mongoose.Schema({
   role: {
@@ -42,12 +41,15 @@ const userSchema = new mongoose.Schema({
   },
   birth: {
     type: Date,
+    default: null
   },
   phone: {
     type: String,
+    default: ''
   },
   address: {
     type: String,
+    default: ''
   },
   passwordConfirm: {
     type: String,
@@ -60,10 +62,7 @@ const userSchema = new mongoose.Schema({
       message: 'Passwords are not the same!'
     }
   },
-  passwordChangedAt: Date,
-  passwordResetToken: String,
-  // ResetToken should expires after amount of time as security measure
-  passwordResetExpires: Date,
+  passwordChangedAt: Date,  // ResetToken should expires after amount of time as security measure
   active: {
     type: Boolean,
     default: true,
@@ -75,7 +74,7 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.virtual("birth_formatted").get(function () {
-  return moment(this.birth).format("MMMM Do, YYYY");
+  return moment(this.birth).format("YYYY-MM-DD");
 });
 // Middleware
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <%- include('_head') %>
+
+  <body>
+    <!-- HEADER -->
+    <%- include('_header') %>
+    <!-- CONTENT -->
+        <div id="right_panel">
+        <div class="wrap-table">
+            <table>
+            <thead>
+                <tr>
+                <th scope="col" class="sticky-col">Student ID</th>
+                <th scope="col">Status</th>
+                <th scope="col">Course</th>
+                <th scope="col">Mark</th>
+                <th scope="col">Year</th>
+                <th scope="col">Comments</th>
+                <th scope="col" class="sticky-col sticky-col-right">Modified At</th>
+                </tr>
+            </thead>
+
+            <% function getStatusClass(status) {
+                switch (status) {
+                  case 'completed':
+                    return '';
+                  case 'in progress':
+                    return 'status__inProgress';
+                  case 'dropped':
+                    return 'status__drop';
+                  default:
+                    return '';
+                }
+              } %>
+            <tbody>
+                <% record.forEach(record => { %>
+                <tr>
+                <td class="sticky-col" scope="row" data-label="Customer">
+                    <div class="user__info">
+                    <label>
+                        <input type="checkbox" class="checkbox">
+                        <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        </span>
+                    </label>
+                    <div>
+                        <div class="user__id"><%= record.user.uid %></div>
+                    </div>
+                    </div>
+                </td>
+                <td data-label="Status">
+                    <div class="status <%= getStatusClass(record.status) %>"><%= record.status %></div>
+                </td>
+                <td data-label="Course">
+                    <span><%= record.course.course_id %></span>
+                </td>
+                <td data-label="Mark"><%= record.mark %></td>
+                <td data-label="Year"><%= record.year %></td>
+                <td data-label="Comments"><%= record.comments %></td>
+                <td data-label="Modified At"><%= new Date(record.modifiedAt).toLocaleString() %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+            </table>
+        </div>
+        </div> 
+    <!-- FOOTER -->
+    <%- include('_footer') %>
+  </body>
+</html> 

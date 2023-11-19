@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <%- include('_head') %>
+  <body>
+    <!-- HEADER -->
+    <%- include('_header') %>
+    <!-- CONTENT -->
+    <main class="main">
+      <div class="user-view">
+        <%- include('_side__menu') %>
+        
+        <div class="user-view__content">
+        <div class="user-view__form-container">
+          <h2 class="heading-secondary">Your account settings</h2>
+          <form class="form form-user-data">
+            <div class="form__group">
+              <label class="form__label" for="name">Name</label>
+              <input class="form__input" type="text" id="name" name="name" value="<%= currentUser.name %>" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Email address</label>
+              <input class="form__input" type="email" id="email" name="email" value="<%= currentUser.email %>" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="sex">Sex:</label>
+              <select id="sex" class="form__input" name="sex">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select><br>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="brith">Brith</label>
+              <input class="form__input" type="date" id="brith" name="brith" value="<%= currentUser.birth_formatted %>">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="phone">Phone</label>
+              <input class="form__input" type="text" id="phone" name="phone" value="<%= currentUser.phone %>">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="address">Address</label>
+              <input class="form__input" type="text" id="address" name="address" value="<%= currentUser.address %>">
+            </div>
+            <div class="form__group right">
+              <button class="btn btn--small btn--green" type="submit">Save settings</button>
+            </div>
+          </form>
+        </div>
+        <div class="line">&nbsp;</div>
+
+        <div class="user-view__form-container">
+          <h2 class="heading-secondary">Password change</h2>
+          <form class="form form-user-password">
+            <div class="form__group">
+              <label class="form__label" for="password-current">Current password</label>
+              <input class="form__input" type="password" id="password-current" name="passwordCurrent" placeholder="••••••••" required minlength="8">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="password">New password</label>
+              <input class="form__input" type="password" id="password" name="password" placeholder="••••••••" required minlength="8">
+            </div>
+            <div class="form__group ma-bt-lg">
+              <label class="form__label" for="password-confirm">Confirm password</label>
+              <input class="form__input" type="password" id="password-confirm" name="passwordConfirm" placeholder="••••••••" required minlength="8">
+            </div>
+            <div class="form__group right">
+              <button class="btn btn--small btn--green btn--save-password" type="submit">Save password</button>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </main>
+    <!-- FOOTER -->
+    <%- include('_footer') %>
+  </body>
+</html> 

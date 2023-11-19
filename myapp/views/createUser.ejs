@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <%- include('_head') %>
+  <body>
+    <!-- HEADER -->
+    <%- include('_header') %>
+    <!-- CONTENT -->
+    <main class="main">
+      <div class="user-view">
+        <%- include('_side__menu') %>
+
+        <div class="user-view__content">
+        <div class="user-view__form-container">
+          <h2 class="heading-secondary">SignUp User</h2>
+          <form class="form form-create-user">
+            <div class="form__group">
+              <label class="form__label" for="role">Role:</label>
+              <select id="role" class="form__input" name="role">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="student">student</option>
+                <option value="teacher">teacher</option>
+                <option value="admin">admin</option>
+              </select><br>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="uid">uid</label>
+              <input class="form__input" type="text" id="uid" name="uid" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="name">Name</label>
+              <input class="form__input" type="text" id="name" name="name" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Email address</label>
+              <input class="form__input" type="email" id="email" name="email" required>
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="password">Password</label>
+                <input class="form__input" type="password" id="password" name="password">
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="passwordConfirm">PasswordConfirm</label>
+                <input class="form__input" type="password" id="passwordConfirm" name="passwordConfirm">
+            </div>
+            <div class="form__group right">
+              <button class="btn btn--small btn--green" type="submit">Save settings</button>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </main>
+    <!-- FOOTER -->
+    <%- include('_footer') %>
+  </body>
+</html> 

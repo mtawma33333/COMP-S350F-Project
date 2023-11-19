@@ -16,7 +16,7 @@ const createSendToken = (user, statusCode, req, res) => {
   // send a cookie of jwt token
   res.cookie('jwt', token, {
     expires: new Date(
-      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      Date.now() + 50 * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
     secure: req.secure || req.headers['x-forwarded-proto'] === 'https'
@@ -36,6 +36,7 @@ const createSendToken = (user, statusCode, req, res) => {
 
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create({
+    role: req.body.role, //TODO delete in production
     uid: req.body.uid,
     name: req.body.name,
     email: req.body.email,
@@ -116,6 +117,36 @@ exports.restrictTo = (...roles) => {
     next()
   }
 }
+
+exports.isLoggedIn = async (req, res, next) => {
+  if (req.cookies.jwt) {
+    try {
+      // 1) verify token
+      const decoded = await promisify(jwt.verify)(
+        req.cookies.jwt,
+        process.env.JWT_SECRET
+      );
+
+      // 2) Check if user still exists
+      const currentUser = await User.findById(decoded.id);
+      if (!currentUser) {
+        return next();
+      }
+
+      // 3) Check if user changed password after the token was issued
+      if (currentUser.changedPasswordAfter(decoded.iat)) {
+        return next();
+      }
+
+      // THERE IS A LOGGED IN USER
+      res.locals.currentUser = currentUser;
+      return next();
+    } catch (err) {
+      return next();
+    }
+  }
+  next();
+};
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
   // 1) Get the user from collection

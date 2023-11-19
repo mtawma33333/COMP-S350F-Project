@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <%- include('_head') %>
+  <body>
+    <!-- HEADER -->
+    <%- include('_header') %>
+    <!-- CONTENT -->
+    <main class="main">
+      <div class="user-view">
+        <%- include('_side__menu') %>
+        <div class="user-view__content">
+        <div class="user-view__form-container">
+          <h2 class="heading-secondary">Edit <%= course.course_id %> <%= course.name %></h2>
+          <form class="form form-update-course">
+            <div class="form__group">
+              <label class="form__label" for="course_id">Course_id</label>
+              <input class="form__input" type="text" id="course_id" name="course_id" value="<%= course.course_id %>" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="name">Name</label>
+              <input class="form__input" type="text" id="name" name="name" value="<%= course.name %>" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="description">Description</label>
+              <input class="form__input" type="text" id="description" name="description" value="<%= course.description %>" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="credits">Credits</label>
+              <input class="form__input" type="number" id="credits" name="credits" value="<%= course.credits %>" min="1" max="12">
+            </div>
+            <div class="form__group right">
+              <button class="btn btn--small" type="submit">Save settings</button>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </main>
+    <!-- FOOTER -->
+    <%- include('_footer') %>
+  </body>
+</html> 

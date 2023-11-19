@@ -1,0 +1,28 @@
+<% try{
+    if(currentUser) { 
+      %>
+<nav class="user-view__menu">
+    <ul class="side-nav">
+    <li class="side-nav--active"><a href="#">Settings</a></li>
+    <% if(currentUser.role === 'student') { %>
+    <li><a href="/myRecord">My academic Record</a></li>
+    <% } %>
+    </ul>
+    <div class="admin-nav">
+    <ul class="side-nav">
+        <% if(currentUser.role === 'admin') { %>
+        <li><a href="/user">Manage User</a></li>
+        <li><a href="/signup">Create User</a></li>
+        <li><a href="/course">Manage Course</a></li>
+        <li><a href="/course/create">Create Course</a></li>
+
+        <% } %>
+        <% if(currentUser.role != 'student') { %>
+        <li><a href="/record">Manage Record</a></li>
+        <li><a href="/record/create">Create Record</a></li>
+        <% } %>
+    </ul>
+    </div>
+</nav>
+<% } 
+} catch (err){} %>

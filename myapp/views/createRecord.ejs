@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <%- include('_head') %>
+  <body>
+    <!-- HEADER -->
+    <%- include('_header') %>
+    <!-- CONTENT -->
+    <main class="main">
+      <div class="user-view">
+        <%- include('_side__menu') %>
+        
+        <div class="user-view__content">
+        <div class="user-view__form-container">
+          <h2 class="heading-secondary">Create Record</h2>
+          <form class="form form-create-record">
+            <div class="form__group">
+              <label class="form__label" for="user">Student</label>
+              <select id="user" class="form__input" name="user">
+                <option value="" selected disabled hidden>Choose here</option>
+                <% user.forEach(user => { %>
+                  <option value="<%= user.id %>"><%= user.uid %></option>
+                <% }); %>
+              </select><br>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="course">Course</label>
+              <select id="course" class="form__input" name="course" required>
+                <option value="" selected disabled hidden>Choose here</option>
+                <% course.forEach(course => { %>
+                  <option value="<%= course.id %>"><%= course.course_id %></option>
+                <% }); %>
+              </select><br>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="mark">Mark</label>
+              <input class="form__input" type="number" id="mark" name="mark">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="status">Status</label>
+              <select id="status" class="form__input" name="status">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="completed">Completed</option>
+                <option value="in progress">In Progress</option>
+                <option value="dropped">Dropped</option>
+              </select><br>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="year">Year</label>
+              <input class="form__input" type="number" id="year" name="year" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="comments">comments</label>
+              <input class="form__input" type="text" id="comments" name="comments">
+            </div>
+            <div class="form__group right">
+              <button class="btn btn--small btn--green" type="submit">Save settings</button>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </main>
+    <!-- FOOTER -->
+    <%- include('_footer') %>
+  </body>
+</html> 
