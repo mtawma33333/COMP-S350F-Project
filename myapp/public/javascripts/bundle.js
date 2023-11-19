@@ -5469,7 +5469,7 @@ var login = exports.login = /*#__PURE__*/function () {
           if (res.data.status === 'success') {
             (0, _alerts.showAlert)('success', 'Logged in successfully!');
             window.setTimeout(function () {
-              location.assign('/');
+              location.assign('/account');
             }, 1500);
           }
           _context.next = 10;
@@ -5594,7 +5594,7 @@ var updateData = exports.updateData = /*#__PURE__*/function () {
           _context.prev = 0;
           path = window.location.pathname;
           id = path.split('/')[2]; // assuming the path is "/user/:id/update"
-          url = "http://localhost:3000/api/".concat(option, "/").concat(id);
+          url = "/api/".concat(option, "/").concat(id);
           console.log(data);
           _context.next = 7;
           return (0, _axios.default)({
@@ -5630,7 +5630,7 @@ var CreateOne = exports.CreateOne = /*#__PURE__*/function () {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
           _context2.prev = 0;
-          url = type === 'user' ? 'http://localhost:3000/api/user/signup' : "http://localhost:3000/api/".concat(option, "/");
+          url = type === 'user' ? '/api/user/signup' : "/api/".concat(option, "/");
           console.log(data);
           _context2.next = 5;
           return (0, _axios.default)({
@@ -5666,7 +5666,7 @@ var DeleteOne = exports.DeleteOne = /*#__PURE__*/function () {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
           _context3.prev = 0;
-          url = "http://localhost:3000/api/".concat(type, "/").concat(id);
+          url = "/api/".concat(type, "/").concat(id);
           _context3.next = 4;
           return (0, _axios.default)({
             method: 'DELETE',
@@ -5909,7 +5909,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50771" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1184" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
