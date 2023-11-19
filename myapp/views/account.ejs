@@ -11,6 +11,9 @@
         
         <div class="user-view__content">
         <div class="user-view__form-container">
+          <% try{
+            if(currentUser) { 
+              %>
           <h2 class="heading-secondary">Your account settings</h2>
           <form class="form form-user-data">
             <div class="form__group">
@@ -46,6 +49,8 @@
               <button class="btn btn--small btn--green" type="submit">Save settings</button>
             </div>
           </form>
+          <% } 
+} catch (err){} %>
         </div>
         <div class="line">&nbsp;</div>
 

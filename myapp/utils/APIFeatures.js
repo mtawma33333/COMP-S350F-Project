@@ -26,7 +26,7 @@ class APIFeatures {
             const sortBy = this.queryString.sort.split(',').join(' ')
             this.query.sort(sortBy)
         } else {
-            this.query.sort('sid')
+            this.query.sort('id')
         }
 
         return this
