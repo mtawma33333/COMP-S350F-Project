@@ -9,7 +9,9 @@ router.use(authController.isLoggedIn)
 router.get('/login',viewsController.getLoginForm)
 router.get('/signup', viewsController.getSignUp)
 
-router.get('/',viewsController.getAccount)
+router.get('/',function (req, res) {
+    res.redirect('/login');
+});
 router.get('/account', viewsController.getAccount)
 
 router.get('/course', authController.protect, viewsController.getCourse)
