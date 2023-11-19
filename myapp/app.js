@@ -18,12 +18,13 @@ const courseRouter = require('./routes/course');
 const recordRouter = require('./routes/record');
 
 const app = express();
-
+app.enable('trust proxy');
 // view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// "Everything is middleware" (even routers)
+// "Everything is middleware" (even routersi)
+
 
 // 1) GLOBAL MIDDLEWARES
 // Implement CORS
