@@ -11,8 +11,6 @@ Only Admin can access the GET All User, Get User by Id API
 
 Only Admin can access the Update or Delete User, Course By Id API
 
-
-
 Only Admin and teacher can access the Record API
 
 
