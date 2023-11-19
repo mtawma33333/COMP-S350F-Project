@@ -23,7 +23,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Get All User
 ### Method: GET
 >```
->{{URL}}api/user?page=3&limit=3&sort=uid
+>https://project-s350-andand-s381f.onrender.comapi/user?page=3&limit=3&sort=uid
 >```
 ### Query Params
 
@@ -84,7 +84,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Get User By Id
 ### Method: GET
 >```
->{{URL}}api/user/:id
+>https://project-s350-andand-s381f.onrender.comapi/user/:id
 >```
 ### Response: 200
 ```json
@@ -113,7 +113,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Get  User's All Record
 ### Method: GET
 >```
->{{URL}}api/user/:userId/record/
+>https://project-s350-andand-s381f.onrender.comapi/user/:userId/record/
 >```
 ### Response: 200
 ```json
@@ -353,7 +353,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Get Me
 ### Method: GET
 >```
->{{URL}}api/user/me
+>https://project-s350-andand-s381f.onrender.comapi/user/me
 >```
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
@@ -361,7 +361,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Student Sign Up
 ### Method: POST
 >```
->{{URL}}api/user/signup
+>https://project-s350-andand-s381f.onrender.comapi/user/signup
 >```
 ### Response: 201
 ```json
@@ -391,7 +391,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Login
 ### Method: POST
 >```
->{{URL}}api/user/login
+>https://project-s350-andand-s381f.onrender.comapi/user/login
 >```
 ### Response: 200
 ```json
@@ -424,7 +424,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Login Admin
 ### Method: POST
 >```
->{{URL}}api/user/login
+>https://project-s350-andand-s381f.onrender.comapi/user/login
 >```
 ### Body (**raw**)
 
@@ -441,7 +441,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Create New User
 ### Method: POST
 >```
->{{URL}}api/user/
+>https://project-s350-andand-s381f.onrender.comapi/user/
 >```
 ### Response: 201
 ```json
@@ -471,7 +471,7 @@ Only Admin and teacher can access the Record API
 ## End-point: UpdateMe
 ### Method: PATCH
 >```
->{{URL}}api/user/updateMe
+>https://project-s350-andand-s381f.onrender.comapi/user/updateMe
 >```
 ### Body (**raw**)
 
@@ -508,7 +508,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Update My Password
 ### Method: PATCH
 >```
->{{URL}}api/user/updateMyPassword
+>https://project-s350-andand-s381f.onrender.comapi/user/updateMyPassword
 >```
 ### Body (**raw**)
 
@@ -548,7 +548,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Update User By Id
 ### Method: PATCH
 >```
->{{URL}}api/user/:id
+>https://project-s350-andand-s381f.onrender.comapi/user/:id
 >```
 ### Body (**raw**)
 
@@ -588,7 +588,7 @@ Only Admin and teacher can access the Record API
 ## End-point: Delete User By Id
 ### Method: DELETE
 >```
->{{URL}}api/user/:id
+>https://project-s350-andand-s381f.onrender.comapi/user/:id
 >```
 ### Response: 204
 ```json
@@ -603,7 +603,7 @@ null
 ## End-point: Get ALL Course
 ### Method: GET
 >```
->{{URL}}api/course?page=3&limit=3&sort=course_id
+>https://project-s350-andand-s381f.onrender.comapi/course?page=3&limit=3&sort=course_id
 >```
 ### Query Params
 
@@ -665,7 +665,7 @@ null
 ## End-point: Get Course By Id
 ### Method: GET
 >```
->{{URL}}api/course/:id
+>https://project-s350-andand-s381f.onrender.comapi/course/:id
 >```
 ### Response: 200
 ```json
@@ -691,7 +691,7 @@ null
 ## End-point: Get Course's All Record
 ### Method: GET
 >```
->{{URL}}api/course/:courseId/record/
+>https://project-s350-andand-s381f.onrender.comapi/course/:courseId/record/
 >```
 ### Response: 200
 ```json
@@ -821,7 +821,7 @@ null
 ## End-point: Create Course
 ### Method: POST
 >```
->{{URL}}api/course
+>https://project-s350-andand-s381f.onrender.comapi/course
 >```
 ### Response: 201
 ```json
@@ -847,7 +847,7 @@ null
 ## End-point: Update Course By Id
 ### Method: PATCH
 >```
->{{URL}}api/course/:id
+>https://project-s350-andand-s381f.onrender.comapi/course/:id
 >```
 ### Response: 200
 ```json
@@ -873,7 +873,7 @@ null
 ## End-point: Delete Course
 ### Method: DELETE
 >```
->{{URL}}api/course/:id
+>https://project-s350-andand-s381f.onrender.comapi/course/:id
 >```
 ### Response: 204
 ```json
@@ -888,7 +888,7 @@ null
 ## End-point: Get All Record
 ### Method: GET
 >```
->{{URL}}api/record?course=6552f4b89d95074fe10783b9&mark[gte]=70&sort=mark
+>https://project-s350-andand-s381f.onrender.comapi/record?course=6552f4b89d95074fe10783b9&mark[gte]=70&sort=mark
 >```
 ### Query Params
 
@@ -986,7 +986,7 @@ null
 ## End-point: Get Record By Id
 ### Method: GET
 >```
->{{URL}}api/record/:id
+>https://project-s350-andand-s381f.onrender.comapi/record/:id
 >```
 ### Response: 200
 ```json
@@ -1026,7 +1026,7 @@ null
 ## End-point: Create Record
 ### Method: POST
 >```
->{{URL}}api/record
+>https://project-s350-andand-s381f.onrender.comapi/record
 >```
 ### Response: 201
 ```json
@@ -1054,7 +1054,7 @@ null
 ## End-point: Update Record By Id
 ### Method: PATCH
 >```
->{{URL}}api/record/:id
+>https://project-s350-andand-s381f.onrender.comapi/record/:id
 >```
 ### Response: 200
 ```json
@@ -1094,7 +1094,7 @@ null
 ## End-point: Delete Record
 ### Method: DELETE
 >```
->{{URL}}api/record/:id
+>https://project-s350-andand-s381f.onrender.comapi/record/:id
 >```
 ### Response: 204
 ```json
