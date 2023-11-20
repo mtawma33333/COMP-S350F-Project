@@ -1,11 +1,81 @@
 <!DOCTYPE html>
 <html>
     <%- include('_head') %>
+    <% function handleCourseNotFound(record) {
+      if (!record.course) {
+        return 'Null'
+      }
+      return record.course.course_id
+    } %>     
+    <% function handleStudentNotFound(record) {
+      if (!record.user) {
+        return 'Null'
+      }
+      return record.user.uid
+    } %>           
+
+    <% function getStatusClass(status) {
+        switch (status) {
+          case 'completed':
+            return '';
+          case 'in progress':
+            return 'status__inProgress';
+          case 'dropped':
+            return 'status__drop';
+          default:
+            return '';
+        }
+      } %>
 
   <body>
+
     <!-- HEADER -->
     <%- include('_header') %>
     <!-- CONTENT -->
+    <form action="/record" method="GET">
+      <label for="user" class="query__label">Student ID:</label>
+      <select id="user" class="query__input" name="user">
+        <option value="" selected disabled hidden>Choose here</option>
+        <% user.forEach(user => { %>
+          <option value="<%= user.id %>" <%= query.student === user.id ? 'selected' : '' %>><%= user.uid %> - <%= user.name %></option>
+        <% }); %>
+      </select>
+      <label for="status" class="query__label">Status:</label>
+      <select id="status" class="query__input" name="status">
+          <option value="" selected disabled hidden>Choose here</option>
+          <option value="completed" <%= query.status === 'completed' ? 'selected' : '' %>>completed</option>
+          <option value="in progress" <%= query.status === 'in progress' ? 'selected' : '' %>>in progress</option>
+          <option value="dropped" <%= query.status === 'dropped' ? 'selected' : '' %>>dropped</option>
+      </select>
+      <label for="course" class="query__label">Course:</label>
+      <select id="course" class="query__input" name="course">
+        <option value="" selected disabled hidden>Choose here</option>
+        <% course.forEach(course => { %>
+          <option value="<%= course.id %>" <%= query.course === course.id ? 'selected' : '' %>><%= course.course_id %> - <%= course.name %></option>
+        <% }); %>
+      </select>
+      <br>
+      <input type="number" id="mark" class="query__input" name="mark[lte]" max="100" min="0" value="<%= query.mark || '100' %>">
+      <label for="mark" class="query__label"> > Mark > </label>
+      <input type="number" id="mark" class="query__input" name="mark[gte]" max="100" min="0" value="<%= query.mark || '0' %>">
+
+      <label for="sort" class="query__label">Sort by:</label>
+      <select id="sort" class="query__input" name="sort">
+          <option value="" selected disabled hidden>Choose here</option>
+          <option value="user" <%= query.sort === 'user' ? 'selected' : '' %>>Student ID</option>
+          <option value="course" <%= query.sort === 'course' ? 'selected' : '' %>>Course</option>
+          <option value="status" <%= query.sort === 'status' ? 'selected' : '' %>>Status</option>
+          <option value="mark" <%= query.sort === 'mark' ? 'selected' : '' %>>Mark</option>
+          <option value="year" <%= query.sort === 'year' ? 'selected' : '' %>>Year</option>
+          <option value="comments" <%= query.sort === 'comments' ? 'selected' : '' %>>Comments</option>
+          <option value="modifiedAt" <%= query.sort === 'modifiedAt' ? 'selected' : '' %>>Modified At</option>
+      </select>
+
+      <button type="submit" class="btn btn--small">Search</button>
+    </form>
+    <% if (user.length === 0) { %>
+      <p>No results found.</p>
+    <% } else { %>
         <div id="right_panel">
         <div class="wrap-table">
             <table>
@@ -21,31 +91,7 @@
                 <th scope="col" class="sticky-col sticky-col-right">Actions</th>
                 </tr>
             </thead>
-            <% function handleCourseNotFound(record) {
-              if (!record.course) {
-                return 'Null'
-              }
-              return record.course.course_id
-            } %>     
-            <% function handleStudentNotFound(record) {
-              if (!record.user) {
-                return 'Null'
-              }
-              return record.user.uid
-            } %>           
 
-            <% function getStatusClass(status) {
-                switch (status) {
-                  case 'completed':
-                    return '';
-                  case 'in progress':
-                    return 'status__inProgress';
-                  case 'dropped':
-                    return 'status__drop';
-                  default:
-                    return '';
-                }
-              } %>
             <tbody>
                 <% record.forEach(record => { %>
                 <tr>
@@ -84,6 +130,7 @@
             </table>
         </div>
         </div> 
+        <% } %>
     <!-- FOOTER -->
     <%- include('_footer') %>
   </body>

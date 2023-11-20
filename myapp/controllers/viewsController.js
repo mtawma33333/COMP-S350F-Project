@@ -2,42 +2,64 @@ const User = require('./../models/user')
 const Course = require('./../models/course')
 const Record = require('./../models/aca_record')
 const catchAsync = require('./../utils/catchAsync');
-const AppError = require('./../utils/appError');
-const app = require('../app');
+const APIFeatures = require('./../utils/APIFeatures')
 
 exports.getRecord = catchAsync(async (req, res, next) => {
     // 1) Get tour data from collection
-    const record = await Record.find();
-  
+  const features = new APIFeatures(Record.find(), req.query)
+    .filter()
+    .sort()
+    .paginate();
+
+  const record = await features.query;
+  const course = await Course.find()
+  const user = await User.find({ role: 'student' })
+
     // 2) Build template
     // 3) Render that template using tour data from 1)
     res.status(200).render('record', {
       title: 'All Rcord',
-      record
+      record,
+      course,
+      user,
+      query: req.query // Pass the query object to the template
     });
   });
 
 exports.getCourse = catchAsync(async (req, res, next) => {
     // 1) Get tour data from collection
-    const course = await Course.find();
+  const features = new APIFeatures(Course.find(), req.query)
+    .filter()
+    .sort()
+    .paginate();
+    
+  const course = await features.query;
   
     // 2) Build template
     // 3) Render that template using tour data from 1)
     res.status(200).render('course', {
       title: 'All Course',
-      course
+      course,
+      query: req.query // Pass the query object to the template
     });
   });
 
 exports.getUser = catchAsync(async (req, res, next) => {
     // 1) Get tour data from collection
-    const user = await User.find();
+    const features = new APIFeatures(User.find(), req.query)
+    .filter()
+    .sort()
+    .paginate();
+
+    const user = await features.query;
+
   
     // 2) Build template
     // 3) Render that template using tour data from 1)
     res.status(200).render('user', {
       title: 'All user',
-      user
+      user,
+      query: req.query // Pass the query object to the template
     });
   });
 

@@ -13,6 +13,7 @@ class APIFeatures {
 
         // 1B) Advanced filtering
         let queryStr = JSON.stringify(queryObj)
+        queryStr.replace(/%5B/g, '[').replace(/%5D/g, ']');
         // convert <field>: gte => <field>: $gte 
         queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`)
 

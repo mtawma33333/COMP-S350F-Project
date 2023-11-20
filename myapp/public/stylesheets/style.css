@@ -397,3 +397,35 @@ input:checked + span > svg {
 .btn--red:hover {
   background-color: #F44336;
 }
+
+.query__label {
+  font-size: 1.5rem;
+}
+
+.query__input {
+  display:initial;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 1.25rem 1.75rem;
+  border: none;
+  background-color: #fff;
+  background-color: #f2f2f2;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+.query__input:focus {
+  outline: none;
+  border-bottom: 3px solid #55c57a;
+}
+
+.query__input:not(:last-child) {
+  margin-bottom: 2.5rem;
+}

@@ -6,6 +6,38 @@
     <!-- HEADER -->
     <%- include('_header') %>
     <!-- CONTENT -->
+    <form action="/user" method="GET">
+        <label for="role" class="query__label">Role:</label>
+        <select id="role" class="query__input" name="role">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="student" <%= query.role === 'student' ? 'selected' : '' %>>Student</option>
+            <option value="teacher" <%= query.role === 'teacher' ? 'selected' : '' %>>Teacher</option>
+            <option value="admin" <%= query.role === 'admin' ? 'selected' : '' %>>Admin</option>
+        </select>
+        <label for="sex" class="query__label">Sex:</label>
+        <select id="sex" class="query__input" name="sex">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="male" <%= query.sex === 'male' ? 'selected' : '' %>>Male</option>
+            <option value="female" <%= query.sex === 'female' ? 'selected' : '' %>>Female</option>
+            <option value="other" <%= query.sex === 'other' ? 'selected' : '' %>>Other</option>
+        </select>
+        <label for="sort" class="query__label">Sort by:</label>
+        <select id="sort" class="query__input" name="sort">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="uid" <%= query.sort === 'uid' ? 'selected' : '' %>>User ID</option>
+            <option value="role" <%= query.sort === 'role' ? 'selected' : '' %>>Role</option>
+            <option value="name" <%= query.sort === 'name' ? 'selected' : '' %>>Name</option>
+            <option value="email" <%= query.sort === 'email' ? 'selected' : '' %>>Email</option>
+            <option value="sex" <%= query.sort === 'sex' ? 'selected' : '' %>>Sex</option>
+            <option value="birth" <%= query.sort === 'birth' ? 'selected' : '' %>>Birth Date</option>
+            <option value="phone" <%= query.sort === 'phone' ? 'selected' : '' %>>Phone Number</option>
+            <option value="address" <%= query.sort === 'address' ? 'selected' : '' %>>Address</option>
+        </select>
+        <button type="submit" class="btn btn--small">Search</button>
+      </form>
+    <% if (user.length === 0) { %>
+        <p>No results found.</p>
+      <% } else { %>
         <div id="right_panel">
         <div class="wrap-table">
             <table>
@@ -61,6 +93,7 @@
             </table>
         </div>
         </div> 
+    <% } %>
     <!-- FOOTER -->
     <%- include('_footer') %>
   </body>
