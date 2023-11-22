@@ -4,9 +4,11 @@
     if(currentUser) { 
       %>
   <a href="/account" class="nav-item">[<%= currentUser.role %>] <%= currentUser.name %></a>
+  <% if(currentUser.role != 'student') { %>
   <a href="/user" class="nav-item">User</a>
   <a href="/course" class="nav-item">Course</a>
   <a href="/record" class="nav-item">Academic record</a>
+  <% } %>
     <% } 
   } catch (err){} %>
   <a href="/login" class="nav-item nav-item-right nav-item-logout">Logout</a>

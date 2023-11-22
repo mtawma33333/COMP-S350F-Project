@@ -10,8 +10,7 @@ process.on('uncaughtException', err => {
 dotenv.config({ path: './config.env' });
 
 const app = require('./app');
-
-const mongoDB = "mongodb+srv://ylliustudy:ylliustudy@cluster0.tp9t6ke.mongodb.net/ACA_Record?retryWrites=true&w=majority";
+const mongoDB = process.env.mongoDB
 
 mongoose
     .connect(mongoDB)
