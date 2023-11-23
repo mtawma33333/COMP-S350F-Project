@@ -5,7 +5,7 @@ Group: 46
 ********************************************
 # Login
 
-input the uid and password and click submit to login
+input the uid and password on login page and click submit button to login
 
 # Logout
 
@@ -15,27 +15,41 @@ click the logout button in the right top navigation bar
 # CRUD services
 ## Create
 ### 1. Create data
-1.1 login to the admin account and click the link in the side bar of account page to the correspondence data create page
-1.2. fill in the data form to create
-1.3 submit
+1. access the create page
+2. fill the data form and submit to create the data
+
 ### 2. Sign up
-2.1 click the sign up button to access the sign up page
-2.2 fill the sign up form
-2.3 submit and login
+1. click the sign up button to access the sign up page
+2. fill the sign up form
+3. submit and login
 
 ## Read
 1. login to the account and click the link in the navigation bar
 2. (Optional) fill the query form and submit the search the data with condition
+
 ## Update
 1. login to the account and click the link in the navigation bar
 2. click the link in the record action row
 3. fill the data form and submit to update the data
+
 ## Delete
 1. login to the account and click the link in the navigation bar
 2. click the delete button in the record action row
 3. refresh the page to check the data delete success
 ********************************************
-
+# Role-Based Access Control
+Student:
+1. Can access to personal academic record page
+2. Can access to the course info
+Teacher:
+1. Can Access to the user info
+2. Can Access to the course info
+3. Can Access and manage the academic record page
+Admin:
+1. Can Access and manage the user info page
+2. Can Access and manage the course info  page
+3. Can Access and manage the academic record page
+********************************************
 # Data Model
 # USER
 This data model is designed to manage user information for a user management system. The data model is implemented using Mongoose, a MongoDB object modeling tool designed to work in an asynchronous environment.
@@ -86,38 +100,6 @@ The user schema also includes a virtual field:
 
 - **birth_formatted**: A formatted string representing the user's date of birth in the format 'YYYY-MM-DD'.
 
-## Middleware
-
-The user schema includes the following middleware:
-
-### Pre-Save Middleware
-
-- **encrypt password**: Encrypts the user's password before saving it to the database.
-- **delete passwordConfirm field**: Deletes the passwordConfirm field after the password has been encrypted.
-
-### Pre-Find Middleware
-
-- **filter active users**: Filters out inactive users from query results.
-
-## Methods
-
-The user schema includes the following methods:
-
-### correctPassword
-
-- **Description**: Compares a candidate password with the user's password to determine if they match.
-- **Parameters**: 
-  - candidatePassword: The password entered by the user.
-  - userPassword: The password stored in the database.
-- **Returns**: A boolean value indicating whether the passwords match or not.
-
-### changedPasswordAfter
-
-- **Description**: Determines if the user's password has been changed after a given timestamp.
-- **Parameters**: 
-  - JWTTimestamp: The timestamp to compare the user's passwordChangedAt field to.
-- **Returns**: A boolean value indicating whether the user's password has been changed after the given timestamp or not.
-This data model is designed to manage course information for a course management system. The data model is implemented using Mongoose, a MongoDB object modeling tool designed to work in an asynchronous environment.
 # Course
 
 This data model is designed to manage course information for a course management system. The data model is implemented using Mongoose, a MongoDB object modeling tool designed to work in an asynchronous environment.
@@ -167,28 +149,6 @@ The academic record schema defines the structure of the academic record data mod
 - **comments**: Comments associated with the academic record. Optional.
 - **createdAt**: The date and time when the academic record was created. Optional and defaults to the current date and time.
 - **modifiedAt**: The date and time when the academic record was last modified. Optional and defaults to the current date and time.
-
-## Middleware
-
-The academic record schema includes the following middleware:
-
-### Pre-Save Middleware
-
-- **update modifiedAt field**: Updates the modifiedAt field with the current date and time when the academic record is saved.
-
-### Pre-Find Middleware
-
-- **populate user and course fields**: Populates the user and course fields with the corresponding user and course objects.
-
-## Static Methods
-
-The academic record schema includes the following static method:
-
-### calcAvgMarks
-
-- **Description**: Calculates the average marks for each course and year combination.
-- **Parameters**: None.
-- **Returns**: An array of objects containing the course name, year, and average mark.
 
 # API Document
 
