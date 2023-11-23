@@ -1,10 +1,6 @@
 ## Academic Recording System
 
 Group: 46
-Name: 
-LI Chak Hei (12860027)
-
-Application link: https://comp-s350f-project-g46.onrender.com
 
 ********************************************
 # Login
