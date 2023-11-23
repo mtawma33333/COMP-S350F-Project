@@ -41,10 +41,12 @@ click the logout button in the right top navigation bar
 Student:
 1. Can access to personal academic record page
 2. Can access to the course info
+
 Teacher:
 1. Can Access to the user info
 2. Can Access to the course info
 3. Can Access and manage the academic record page
+
 Admin:
 1. Can Access and manage the user info page
 2. Can Access and manage the course info  page
