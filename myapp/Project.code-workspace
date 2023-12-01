@@ -5,5 +5,7 @@
 			"path": ".."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.inlineSuggest.showToolbar": "always"
+	}
 }

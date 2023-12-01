@@ -391,6 +391,7 @@ input:checked + span > svg {
 
 .btn--red {
     background-color: #b91c1c;
+    width: -webkit-fill-available;
 }
 
 .btn--red:hover {
