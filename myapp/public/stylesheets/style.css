@@ -173,9 +173,8 @@ input:checked + span > svg {
 
 
 #right_panel {
-  width: 1000px;
   position:relative;
-  margin: 5% auto;
+  margin: 5% 5%;
 }
 
 

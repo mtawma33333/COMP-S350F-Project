@@ -1,62 +1,62 @@
 [
   {
-    "course_id": "6.0001",
-    "name": "Introduction to Computer Science and Programming in Python",
-    "description": "Introduction to computer science and programming for students with little or no programming experience. Students develop skills to program and use computational techniques to solve problems.",
-    "credits": 4
+    "course_id": "HKMU001",
+    "name": "Introduction to Computer Science",
+    "description": "This course provides an introduction to computer science and programming.",
+    "credits": 3
   },
   {
-    "course_id": "6.042J",
-    "name": "Mathematics for Computer Science",
-    "description": "Introduction to discrete mathematics, including logic, set theory, combinatorics, graph theory, and algorithms.",
-    "credits": 4
+    "course_id": "HKMU002",
+    "name": "Data Structures and Algorithms",
+    "description": "This course covers the fundamental data structures and algorithms used in computer science.",
+    "credits": 3
   },
   {
-    "course_id": "6.006",
-    "name": "Introduction to Algorithms",
-    "description": "Introduction to algorithms for students with at least a little programming experience. Topics include sorting, searching, dynamic programming, greedy algorithms, and graph algorithms.",
-    "credits": 4
+    "course_id": "HKMU003",
+    "name": "Database Systems",
+    "description": "This course covers the design and implementation of database systems.",
+    "credits": 3
   },
   {
-    "course_id": "6.01",
-    "name": "Introduction to EECS I",
-    "description": "Introduction to electrical engineering and computer science for students with no prior programming experience. Topics include digital logic, computer architecture, and programming in Python.",
-    "credits": 4
+    "course_id": "HKMU004",
+    "name": "Operating Systems",
+    "description": "This course covers the design and implementation of operating systems.",
+    "credits": 3
   },
   {
-    "course_id": "6.02",
-    "name": "Introduction to EECS II",
-    "description": "Continuation of 6.01. Topics include circuits, signals and systems, and programming in C.",
-    "credits": 4
+    "course_id": "HKMU005",
+    "name": "Computer Networks",
+    "description": "This course covers the design and implementation of computer networks.",
+    "credits": 3
   },
   {
-    "course_id": "6.003",
-    "name": "Signals and Systems",
-    "description": "Introduction to signals and systems, including Fourier series and transforms, Laplace transforms, and discrete-time signals and systems.",
-    "credits": 4
+    "course_id": "HKMU006",
+    "name": "Software Engineering",
+    "description": "This course covers the principles and practices of software engineering.",
+    "credits": 3
   },
   {
-    "course_id": "6.004",
-    "name": "Computation Structures",
-    "description": "Introduction to digital systems and computer architecture. Topics include combinational and sequential logic, computer organization, and memory systems.",
-    "credits": 4
-  },
-  {
-    "course_id": "6.005",
-    "name": "Elements of Software Construction",
-    "description": "Introduction to software engineering and programming methodology. Topics include testing, debugging, and software design.",
-    "credits": 4
-  },
-  {
-    "course_id": "6.033",
-    "name": "Computer System Engineering",
-    "description": "Introduction to computer systems engineering, including operating systems, networks, and distributed systems.",
-    "credits": 4
-  },
-  {
-    "course_id": "6.034",
+    "course_id": "HKMU007",
     "name": "Artificial Intelligence",
-    "description": "Introduction to artificial intelligence, including search algorithms, game playing, and machine learning.",
-    "credits": 4
+    "description": "This course covers the principles and practices of artificial intelligence.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU008",
+    "name": "Computer Graphics",
+    "description": "This course covers the principles and practices of computer graphics.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU009",
+    "name": "Human-Computer Interaction",
+    "description": "This course covers the principles and practices of human-computer interaction.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU010",
+    "name": "Computer Security",
+    "description": "This course covers the principles and practices of computer security.",
+    "credits": 3
   }
 ]

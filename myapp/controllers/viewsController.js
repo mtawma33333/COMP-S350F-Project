@@ -5,7 +5,7 @@ const catchAsync = require('./../utils/catchAsync');
 const APIFeatures = require('./../utils/APIFeatures')
 
 exports.getRecord = catchAsync(async (req, res, next) => {
-    // 1) Get tour data from collection
+    // 1) Get data from collection
   const features = new APIFeatures(Record.find(), req.query)
     .filter()
     .sort()
@@ -27,7 +27,7 @@ exports.getRecord = catchAsync(async (req, res, next) => {
   });
 
 exports.getCourse = catchAsync(async (req, res, next) => {
-    // 1) Get tour data from collection
+    // 1) Get data from collection
   const features = new APIFeatures(Course.find(), req.query)
     .filter()
     .sort()
@@ -45,7 +45,7 @@ exports.getCourse = catchAsync(async (req, res, next) => {
   });
 
 exports.getUser = catchAsync(async (req, res, next) => {
-    // 1) Get tour data from collection
+    // 1) Get data from collection
     const features = new APIFeatures(User.find(), req.query)
     .filter()
     .sort()
@@ -76,7 +76,7 @@ exports.getLoginForm = catchAsync(async (req, res, next) => {
 })
 
 exports.getMyRecord = catchAsync(async (req, res, next) => {
-  // 1) Get tour data from collection
+  // 1) Get data from collection
   const record = await Record.find({ user: req.user.id });
 
   // 2) Build template
